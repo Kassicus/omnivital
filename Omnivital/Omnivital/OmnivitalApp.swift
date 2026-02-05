@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct OmnivitalApp: App {
+    @State private var healthKitManager = HealthKitManager()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,7 +27,7 @@ struct OmnivitalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HealthDashboardView(healthKitManager: healthKitManager)
         }
         .modelContainer(sharedModelContainer)
     }
