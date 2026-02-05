@@ -15,6 +15,7 @@ struct OmnivitalApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            Fast.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -27,7 +28,7 @@ struct OmnivitalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HealthDashboardView(healthKitManager: healthKitManager)
+            MainTabView(healthKitManager: healthKitManager)
         }
         .modelContainer(sharedModelContainer)
     }
