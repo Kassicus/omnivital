@@ -16,6 +16,12 @@ struct OmnivitalApp: App {
         let schema = Schema([
             Item.self,
             Fast.self,
+            Workout.self,
+            WorkoutExercise.self,
+            WorkoutSet.self,
+            ExerciseProgress.self,
+            CustomExercise.self,
+            CustomWorkoutTemplate.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -22,11 +22,16 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Fasting", systemImage: "fork.knife.circle")
                 }
+
+            WorkoutView()
+                .tabItem {
+                    Label("Lifting", systemImage: "dumbbell.fill")
+                }
         }
     }
 }
 
 #Preview {
     MainTabView(healthKitManager: HealthKitManager())
-        .modelContainer(for: Fast.self, inMemory: true)
+        .modelContainer(for: [Fast.self, Workout.self, WorkoutExercise.self, WorkoutSet.self, ExerciseProgress.self], inMemory: true)
 }
