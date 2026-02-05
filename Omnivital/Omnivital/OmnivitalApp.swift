@@ -22,6 +22,8 @@ struct OmnivitalApp: App {
             ExerciseProgress.self,
             CustomExercise.self,
             CustomWorkoutTemplate.self,
+            Habit.self,
+            HabitCompletion.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

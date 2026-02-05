@@ -23,6 +23,11 @@ struct MainTabView: View {
                     Label("Fasting", systemImage: "fork.knife.circle")
                 }
 
+            HabitView()
+                .tabItem {
+                    Label("Habits", systemImage: "checkmark.circle.fill")
+                }
+
             WorkoutView()
                 .tabItem {
                     Label("Lifting", systemImage: "dumbbell.fill")
@@ -33,5 +38,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView(healthKitManager: HealthKitManager())
-        .modelContainer(for: [Fast.self, Workout.self, WorkoutExercise.self, WorkoutSet.self, ExerciseProgress.self], inMemory: true)
+        .modelContainer(for: [Fast.self, Workout.self, WorkoutExercise.self, WorkoutSet.self, ExerciseProgress.self, Habit.self, HabitCompletion.self], inMemory: true)
 }
